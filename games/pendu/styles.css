@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'Spaghetti Western Swash';
+    src: url(./fonts/spaghettiwestern/fonnts.com-ccspaghettiwestern-swash.otf);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    button {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 20px;
+    }
+    span {
+        text-transform: uppercase;
+        animation: fadeIn 0.5s;
+    }
+}
+
+header {
+    display: block;
+    text-align: center;
+
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 20px;
+
+    background-color: black;
+    color: white;
+    h1 {
+        margin: 0;
+        padding: 0;
+
+        font-family: 'Spaghetti Western Swash';
+        font-size: 50px;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+    .image-container {
+        display: grid;
+        justify-items: center;
+        align-items: start;
+        grid-template-columns: repeat(5, 20%);
+        grid-template-rows: repeat(4, 25%);
+        height: fit-content;
+        width: fit-content;
+        padding: 20px;
+        margin-inline: 20px;
+        & img {
+            grid-column: 1 / span 5;
+            grid-row: 1 / span 5;
+            width: 100%;
+            animation: fadeIn 0.5s;
+        }
+        & .hangman-img {
+            grid-column: 4;
+            grid-row: 2 / span 3;
+            width: 120%;
+            animation: fadeIn 0.8s;
+        }
+    }
+
+    .user-interface {
+        display: inline;
+        text-align: center;
+        align-content: center;
+        width: 50%;
+        padding: 20px;
+        margin: 20px;
+
+        .newGame {
+            margin-block: 10px;
+            & button {
+                padding: 10px;
+                background-color: black;
+                border: 1px white solid;
+                border-radius: 10px;
+                color: white;
+            }
+            & button:hover {
+                background-color: white;
+                border: 1px black solid;
+                color: black;
+            }
+        }
+    }
+
+    .cypher.lost {
+        font-size: 40px;
+        color: orangered;
+    }
+
+    .cypher.won {
+        font-size: 40px;
+        color: orangered;
+    }
+
+    .letters {
+        margin-block: 30px;
+        height: fit-content;
+        animation: fadeIn 0.5s;
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        button {
+            height: 40px;
+            aspect-ratio: 1/1;
+
+            background-color: black;
+            border: 1px white solid;
+            border-radius: 10px;
+            text-align: center;
+            text-transform: uppercase;
+
+            color: white;
+        }
+        & button:hover {
+            background-color: white;
+            border: 1px black solid;
+            color: black;
+        }
+        & button:disabled {
+            background-color: white;
+            border: 1px lightgrey solid;
+            color: lightgrey;
+        }
+    }
+    .user-input {
+        animation: fadeIn 0.5s;
+        display: inline;
+        margin-block: 10px;
+        label {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            font-style: normal;
+            font-size: 20px;
+        }
+        input {
+            padding: 5px;
+            margin-inline: 10px;
+
+            border: 1px black solid;
+            border-radius: 10px;
+
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        button {
+            height: 40px;
+
+            background-color: black;
+            border: 1px white solid;
+            border-radius: 10px;
+            text-align: center;
+
+            color: white;
+        }
+        & button:hover {
+            background-color: white;
+            border: 1px black solid;
+            color: black;
+        }
+        & button:disabled {
+            background-color: white;
+            border: 1px lightgrey solid;
+            color: lightgrey;
+        }
+    }
+}

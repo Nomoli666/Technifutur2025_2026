@@ -1,0 +1,156 @@
+body {
+    background-color: black;
+    color: white;
+    header {
+        display: block;
+        text-align: center;
+
+        margin: 20px;
+
+        border: 5px double white;
+        border-radius: 30px;
+
+        text-transform: uppercase;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    main {
+        text-align: center;
+        button {
+            padding: 10px;
+
+            background-color: black;
+
+            border: 5px double white;
+            border-radius: 10px;
+
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-transform: uppercase;
+        }
+        button:hover {
+            background-color: white;
+
+            border: 5px double black;
+            color: black;
+        }
+
+        .game-container {
+            @media (min-width: 300px) {
+                display: grid;
+                grid-template-columns: repeat(3, 1Fr);
+                justify-items: center;
+            }
+            @media (min-width: 600px) {
+                display: grid;
+                grid-template-columns: repeat(4, 1Fr);
+                justify-items: center;
+            }
+            @media (min-width: 900px) {
+                display: grid;
+                grid-template-columns: repeat(6, 1Fr);
+                justify-items: center;
+            }
+
+            @media (min-width: 1200px) {
+                display: grid;
+                grid-template-columns: repeat(6, 1Fr);
+                justify-items: center;
+            }
+        }
+    }
+}
+
+.card {
+    @media (min-width: 300px) {
+        height: 100px;
+        width: 100px;
+        margin: 0px;
+    }
+    @media (min-width: 720px) {
+        height: 180px;
+        width: 120px;
+    }
+    @media (min-width: 1200px) {
+        height: 200px;
+        width: 150px;
+    }
+
+    position: relative;
+
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 15px;
+    transition: opacity 0.8s ease;
+    opacity: 1;
+    animation: fadeIn 0.5s;
+}
+.card-side {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.6s ease-in-out;
+    position: absolute;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+.card-side img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.card-side.back {
+    transform: rotateY(-180deg);
+}
+.card.stop .card-side.front {
+    transform: rotateY(180deg);
+}
+.card.stop .card-side.back {
+    transform: rotateY(0deg);
+}
+.card.win {
+    opacity: 0;
+    cursor: not-allowed;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.result-message {
+    @media (min-width: 300px) {
+        grid-column: 2;
+    }
+    @media (min-width: 600px) {
+        grid-column: 2 / span 2;
+        font-size: 30px;
+    }
+    @media (min-width: 900px) {
+        grid-column: 2 / span 4;
+        font-size: 50px;
+    }
+    @media (min-width: 1200px) {
+        grid-column: 2 / span 4;
+    }
+
+    grid-row: 1;
+    text-transform: uppercase;
+    animation: fadeIn 0.5s;
+}
