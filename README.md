@@ -12,6 +12,12 @@ Jeux que j'ai fait comme entrainement en JS pendant ma formation chez TECHNIFUTU
 -   API Calls
 -   Events
 
+#### 🤖Languages utilisés🤖
+
+-   HTML
+-   CSS
+-   JS
+
 ### PENDU
 
 #### ✨Techniques utilisées✨
@@ -19,3 +25,9 @@ Jeux que j'ai fait comme entrainement en JS pendant ma formation chez TECHNIFUTU
 -   Fonctions
 -   Events
 -   DOM manip
+
+#### 🤖Languages utilisés🤖
+
+-   HTML
+-   CSS
+-   JS
